@@ -10,7 +10,7 @@
 @media(max-width:560px){.shell{padding:0 16px}.topbar{height:65px}.brand{font-size:19px}.search{min-width:0;width:42px;padding:10px;justify-content:center}.search input{display:none}.search:focus-within{width:160px}.search:focus-within input{display:block}.mobile-menu{display:block}.hero{padding-top:30px}.hero-art{padding:16px}.subject-grid,.category-grid,.article-grid{grid-template-columns:1fr}.page{padding-top:27px}.section-head{align-items:start;flex-direction:column}.article-intro{font-size:16px;padding:17px}.comparison th,.comparison td{padding:10px 9px;font-size:12px}.comparison td:first-child{white-space:normal}.flow{grid-template-columns:1fr;gap:6px}.arrow{transform:rotate(90deg);text-align:center}.branch,.sidebox{grid-template-columns:1fr}.sidebox .toc{grid-column:auto}.subject-card,.category-card,.article-card{padding:17px}}
 
 /* Studyverse editorial redesign */
-:root{--bg:#f3f0e9;--paper:#fffdf8;--ink:#20231f;--muted:#676b62;--line:#d9d7ce;--accent:#235b4b;--soft:#e3eee7;--mint:#eaf3ed;--gold:#f5ecd6;--lav:#ece8df;--shadow:0 14px 34px #22261c0d}
+:root{--bg:#f6f5fb;--paper:#ffffff;--ink:#22243a;--muted:#686b83;--line:#e3e4ef;--accent:#5546d7;--soft:#efedff;--mint:#e3f7ef;--gold:#fff2d8;--lav:#eeebff;--shadow:0 14px 34px #2924540d}
 body{font-family:Georgia,"Times New Roman",serif;line-height:1.7;background:var(--bg);color:var(--ink)}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:radial-gradient(#8b887c .55px,transparent .55px);background-size:7px 7px;z-index:-1}
 .topbar{background:color-mix(in srgb,var(--bg) 90%,transparent);border-bottom:1px solid var(--line)}
@@ -55,14 +55,14 @@ h2{letter-spacing:-1px}
 .theme-toggle:hover{border-color:var(--accent)}
 @media(max-width:560px){.hero{padding-top:32px;gap:25px}.hero>div:first-child{padding-top:15px}.brand{font-size:17px}.theme-toggle{padding:8px;font-size:11px}.section-head{margin-top:29px}}
 /* Dark appearance */
-body[data-theme="dark"]{--bg:#171b19;--paper:#202622;--ink:#f0eee5;--muted:#b3b8ae;--line:#39423c;--accent:#9bd0b3;--soft:#263b31;--mint:#23382d;--gold:#3d3522;--lav:#252d28;--shadow:0 14px 34px #0005;color-scheme:dark}
+body[data-theme="dark"]{--bg:#151522;--paper:#202034;--ink:#f5f3ff;--muted:#b8b7d0;--line:#3b3a56;--accent:#b6aaff;--soft:#302b50;--mint:#203d37;--gold:#44371f;--lav:#292541;--shadow:0 14px 34px #0005;color-scheme:dark}
 body[data-theme="dark"] .topbar{background:color-mix(in srgb,var(--bg) 92%,transparent)}
 body[data-theme="dark"] .search,body[data-theme="dark"] .art-card,body[data-theme="dark"] .article-intro,body[data-theme="dark"] .comparison,body[data-theme="dark"] .visual,body[data-theme="dark"] .topic-link,body[data-theme="dark"] .empty{background:var(--paper);color:var(--ink)}
 body[data-theme="dark"] .lead,body[data-theme="dark"] .subject-card p,body[data-theme="dark"] .category-card p,body[data-theme="dark"] .article-card p,body[data-theme="dark"] .article-main p{color:var(--muted)}
 body[data-theme="dark"] .comparison th{background:var(--soft);color:var(--ink)}
 body[data-theme="dark"] .comparison td:first-child{color:var(--ink)}
 body[data-theme="dark"] .btn{background:var(--paper);color:var(--ink);border-color:var(--line)}
-body[data-theme="dark"] .btn.primary{background:var(--accent);color:#14231b;border-color:var(--accent)}
+body[data-theme="dark"] .btn.primary{background:var(--accent);color:#211b45;border-color:var(--accent)}
 body[data-theme="dark"] .tag{background:var(--soft);color:var(--accent)}
 body[data-theme="dark"] .callout{background:var(--soft);color:var(--ink)}
 body[data-theme="dark"] .theme-toggle{background:var(--paper);color:var(--ink)}
@@ -171,7 +171,7 @@ function doSearch(q){let query=q.trim().toLowerCase();if(!query)return;let resul
 
 // Appearance switch: light by default; users can switch to dark and back.
 const themeToggle=document.getElementById("themeToggle");
-function setTheme(theme){document.body.dataset.theme=theme;themeToggle.textContent=theme==="dark"?"☀ Light":"☾ Dark";themeToggle.setAttribute("aria-label",theme==="dark"?"Switch to light appearance":"Switch to dark appearance");document.querySelector('meta[name="theme-color"]').setAttribute("content",theme==="dark"?"#171b19":"#f3f0e9")}
+function setTheme(theme){document.body.dataset.theme=theme;themeToggle.textContent=theme==="dark"?"☀ Light":"☾ Dark";themeToggle.setAttribute("aria-label",theme==="dark"?"Switch to light appearance":"Switch to dark appearance");document.querySelector('meta[name="theme-color"]').setAttribute("content",theme==="dark"?"#151522":"#f6f5fb")}
 themeToggle.addEventListener("click",()=>setTheme(document.body.dataset.theme==="dark"?"light":"dark"));
 setTheme("light");
 renderSubjects();

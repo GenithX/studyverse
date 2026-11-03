@@ -282,7 +282,7 @@ document.querySelector(".search").addEventListener("click",()=>{if(window.matchM
 /* Studyverse personal learning space: data is stored locally in this browser only. */
 const svStoreKey="studyverse.profile.v1";
 const svDefault={name:"",username:"",dob:"",interests:"",city:"",district:"",state:"West Bengal",country:"India",field:"",goal:"",saved:[],recent:[],notes:[],read:[]};
-function svLoad(){try{return {...svDefault,...JSON.parse(localStorage.getItem(svStoreKey)||"{}")}}catch(e){return {...svDefault}}}
+function svLoad(){try{const raw=JSON.parse(localStorage.getItem(svStoreKey)||"{}");const d={...svDefault,...(raw&&typeof raw==="object"?raw:{})};for(const k of ["saved","recent","notes","read"])if(!Array.isArray(d[k]))d[k]=[];for(const k of ["name","username","dob","interests","city","district","state","country","field","goal"])if(typeof d[k]!=="string")d[k]=svDefault[k]||"";return d}catch(e){return {...svDefault}}}
 let svData=svLoad();
 function svPersist(){try{localStorage.setItem(svStoreKey,JSON.stringify(svData))}catch(e){console.warn("Studyverse could not save local data",e)}}
 function svTitle(id){for(const s of subjects){for(const c of s.categories){const a=c.articles.find(x=>x.id===id);if(a)return {id,title:a.title,subject:s.name,category:c.name}}}return id==="tort-intro"?{id,title:"What is Tort Law?",subject:"Law",category:"Tort Law"}:{id,title:id,subject:"Studyverse",category:"Topic"}}
@@ -298,8 +298,8 @@ document.getElementById("profileCity").addEventListener("change",e=>{const distr
 document.getElementById("profileForm").addEventListener("submit",e=>{e.preventDefault();svData.name=document.getElementById("displayName").value.trim();svData.username=document.getElementById("profileUsername").value.trim();svData.dob=document.getElementById("profileDob").value.trim();svData.interests=document.getElementById("profileInterests").value.trim();svData.city=document.getElementById("profileCity").value;svData.district=document.getElementById("profileDistrict").value;svData.state=document.getElementById("profileState").value.trim();svData.country=document.getElementById("profileCountry").value.trim();svData.field=document.getElementById("studyField").value.trim();svData.goal=document.getElementById("studyGoal").value.trim();svPersist();svRenderProfile();document.getElementById("profileSavedMsg").textContent="Saved on this device ✓";setTimeout(()=>document.getElementById("profileSavedMsg").textContent="",2200)});
 document.getElementById("noteForm").addEventListener("submit",e=>{e.preventDefault();svData.notes.push({topic:document.getElementById("noteTopic").value.trim(),body:document.getElementById("noteBody").value.trim(),createdAt:Date.now()});svPersist();document.getElementById("noteTopic").value="";document.getElementById("noteBody").value="";svRenderProfile()});
 document.getElementById("editProfileBtn").onclick=()=>document.getElementById("displayName").focus();
-document.getElementById("profileBtn").onclick=()=>{svRenderProfile();showPage("profilePage")};
-document.querySelectorAll("[data-nav]").forEach(b=>{if(b.dataset.nav==="profile")b.onclick=()=>{svRenderProfile();showPage("profilePage")}});
+document.getElementById("profileBtn").onclick=()=>{showPage("profilePage");try{svRenderProfile()}catch(e){console.error("Studyverse profile render error:",e);document.getElementById("profileHeading").textContent="Your Studyverse";document.getElementById("profileSubheading").textContent="Your profile is ready. Fill in your details below and save them on this device."}};
+document.querySelectorAll("[data-nav]").forEach(b=>{if(b.dataset.nav==="profile")b.onclick=()=>{showPage("profilePage");try{svRenderProfile()}catch(e){console.error("Studyverse profile render error:",e)}}});
 const svOriginalOpenArticle=openArticle;
 openArticle=function(id){svTrack(id);svOriginalOpenArticle(id);if(id==="tort-intro")svAddSaveButton()};
 svShowQuiz();

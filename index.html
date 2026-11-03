@@ -94,7 +94,37 @@ body[data-theme="dark"] .theme-toggle{background:var(--paper);color:var(--ink)}
 .tag{border-radius:999px}
 @media(max-width:560px){.subject-card,.category-card,.article-card,.panel,.visual,.comparison,.callout,.empty{border-radius:14px}}
 
-.site-credit{display:inline-flex;align-items:center;gap:5px;margin:0 0 13px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--muted);font:12px/1.4 Arial,sans-serif;letter-spacing:.2px}.site-credit strong{color:var(--accent);font-weight:800}</style></head>
+.site-credit{display:inline-flex;align-items:center;gap:5px;margin:0 0 13px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--muted);font:12px/1.4 Arial,sans-serif;letter-spacing:.2px}.site-credit strong{color:var(--accent);font-weight:800}
+/* Mobile layout repair */
+@media(max-width:850px){
+  .topinner{gap:10px;justify-content:space-between}
+  .nav{display:none}
+}
+@media(max-width:560px){
+  .shell{padding-left:14px;padding-right:14px}
+  .topbar{height:64px}
+  .topinner{gap:7px;min-width:0}
+  .brand{font-size:17px;gap:7px;flex:0 1 auto;min-width:0}
+  .logo{width:34px;height:34px;flex:0 0 34px}
+  .search{width:36px;min-width:36px;height:38px;padding:7px;flex:0 0 36px}
+  .search input{display:none}
+  .search:focus-within{position:absolute;right:12px;top:12px;width:min(210px,58vw);z-index:3;background:var(--paper)}
+  .search:focus-within input{display:block}
+  .theme-toggle{padding:8px 9px;font-size:11px;flex:0 0 auto}
+  #homeBtn{display:none}
+  #profileBtn{padding:8px 9px;font-size:12px;white-space:nowrap;flex:0 0 auto}
+  .hero{grid-template-columns:minmax(0,1fr);padding:28px 0 24px;gap:24px}
+  .hero h1{font-size:clamp(34px,9vw,44px);letter-spacing:-1.7px;overflow-wrap:normal}
+  .lead{font-size:16px;line-height:1.65}
+  .actions{gap:8px}
+  .actions .btn{flex:1 1 145px;padding:12px 10px;font-size:13px}
+  .hero-art{min-width:0;padding:15px;min-height:0}
+  .art-card{padding:11px;min-width:0}
+  .art-card:nth-child(2){margin-left:12px}
+  .site-credit{font-size:11px}
+}
+
+</style></head>
 <body>
 <header class="topbar"><div class="shell topinner">
   <div class="brand"><span class="logo">S</span> Studyverse</div>

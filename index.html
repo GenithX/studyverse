@@ -309,10 +309,33 @@ body[data-theme="dark"] .tile-cream{color:#30113b}
  .quick-pill{height:50px}
 }
 
+
+/* Precision polish: icon artwork, layered glow, and the approved plum/amber finish */
+.brand-button .logo svg{width:100%;height:100%;display:block;overflow:visible}
+.tile-icon{display:block;width:47px;height:47px;margin:1px 0 24px;color:#fff4e8;filter:drop-shadow(0 3px 5px #200a2e50)}
+.tile-icon svg{width:100%;height:100%;display:block;overflow:visible}
+.tile-cream .tile-icon{color:#ff8500;filter:drop-shadow(0 2px 2px #ff850025)}
+.feature-tile{isolation:isolate;box-shadow:0 22px 44px #42123b38,0 7px 16px #42123b12,inset 0 1px 0 #ffffff55}
+.feature-tile:before{content:"";position:absolute;z-index:-1;inset:-35% -15% auto 15%;height:70%;border-radius:50%;background:radial-gradient(ellipse,#ffffff30,transparent 66%);filter:blur(16px);pointer-events:none}
+.tile-plum{background:linear-gradient(145deg,#51164e 0%,#35103f 58%,#260b34 100%)}
+.tile-violet{background:linear-gradient(145deg,#914a8d 0%,#60205f 58%,#3d1048 100%)}
+.tile-amber{background:linear-gradient(145deg,#ffb12d 0%,#ff8a00 55%,#f25a26 100%)}
+.tile-cream{background:linear-gradient(145deg,#fffefa 0%,#fff8ef 56%,#ffe8db 100%)}
+.feature-tile:after{background:linear-gradient(110deg,#ffffff00,#ffffff20,#ffbd762e);filter:blur(10px)}
+.hero-search{border-color:#f0d9df;background:linear-gradient(110deg,#fffdfb,#fff6f2);box-shadow:0 14px 32px #4c1b451a,0 3px 8px #4c1b450b,inset 0 1px 0 #fff}
+.hero-search button{background:linear-gradient(145deg,#421348,#2b0b36);box-shadow:0 8px 20px #35113d55,0 0 0 3px #ffffffaa,inset 0 1px 0 #ffffff35}
+.quick-pill{background:linear-gradient(145deg,#fffdfa,#fff6f3);box-shadow:0 10px 24px #4a194017,0 2px 5px #4a19400b,inset 0 1px 0 #fff}
+.quick-pill.quick-active{background:linear-gradient(120deg,#35113d,#57245a);box-shadow:0 13px 27px #35113d42,0 3px 7px #35113d1d,inset 0 1px 0 #ffffff25}
+.quick-pill span{display:inline-flex;width:25px;height:25px;align-items:center;justify-content:center}
+.quick-pill span svg{width:24px;height:24px;display:block}
+.subject-card,.category-card,.article-card{box-shadow:0 7px 20px #4b25400c,0 2px 5px #4b254006,inset 0 1px 0 #fff}
+.subject-card:hover,.category-card:hover,.article-card:hover{box-shadow:0 18px 34px #4b25401d,0 5px 12px #4b25400c}
+.home-redesign:before{background:radial-gradient(ellipse at 82% 12%,#ffbd8a60 0,transparent 37%),radial-gradient(ellipse at 13% 83%,#f3c9e64f 0,transparent 42%)}
+@media(max-width:700px){.tile-icon{width:37px;height:37px;margin-bottom:18px}.feature-tile{box-shadow:0 16px 30px #42123b30,0 4px 9px #42123b12,inset 0 1px 0 #ffffff55}}
 </style></head>
 <body>
 <header class="topbar"><div class="shell topinner">
-  <button class="brand brand-button" data-nav="home" aria-label="Studyverse home"><span class="logo">♧</span><span>STUDYVERSE</span></button>
+  <button class="brand brand-button" data-nav="home" aria-label="Studyverse home"><span class="logo" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M5 11c8-3 14-1 19 4v25C19 34 12 32 5 35zM43 11c-8-3-14-1-19 4v25c5-6 12-8 19-5z" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><path d="M24 15v25" stroke="currentColor" stroke-width="2.4"/></svg></span><span>STUDYVERSE</span></button>
   <nav class="nav" aria-label="Main navigation"><button class="active" data-nav="home">Home</button><button data-nav="subjects">Subjects</button><button data-nav="about">Resources</button><button id="toolsNav">Tools</button></nav>
   <label class="search" title="Search topics"><span aria-hidden="true">⌕</span><input id="search" placeholder="Search subjects, topics, or notes…" aria-label="Search a topic"></label>
   <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark appearance">☾</button>
@@ -328,18 +351,18 @@ body[data-theme="dark"] .tile-cream{color:#30113b}
       <label class="hero-search"><span aria-hidden="true">⌕</span><input id="homeSearch" placeholder="Search subjects, topics, or notes…" aria-label="Search subjects, topics, or notes"><button id="homeSearchBtn" aria-label="Search">→</button></label>
     </div>
     <div class="study-feature-cards">
-      <button class="feature-tile tile-plum" id="subjectsTile"><span class="tile-icon">♧</span><strong>Subjects</strong><small>Explore notes by<br>subjects &amp; topics</small><span class="tile-arrow">→</span></button>
-      <button class="feature-tile tile-violet" id="resourcesTile"><span class="tile-icon">▱</span><strong>Resources</strong><small>PYQs, syllabi &amp;<br>reference material</small><span class="tile-arrow">→</span></button>
-      <button class="feature-tile tile-amber" id="toolsTile"><span class="tile-icon">▣</span><strong>Tools</strong><small>Useful academic<br>tools &amp; utilities</small><span class="tile-arrow">→</span></button>
-      <button class="feature-tile tile-cream" id="savedTile"><span class="tile-icon">♧</span><strong>Saved</strong><small>Your bookmarks<br>and quick access</small><span class="tile-arrow">→</span></button>
+      <button class="feature-tile tile-plum" id="subjectsTile"><span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M5 12c8-3 14-1 19 4v25C19 34 12 32 5 35zM43 12c-8-3-14-1-19 4v25c5-6 12-8 19-5z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M24 16v25" stroke="currentColor" stroke-width="2"/></svg></span><strong>Subjects</strong><small>Explore notes by<br>subjects &amp; topics</small><span class="tile-arrow">→</span></button>
+      <button class="feature-tile tile-violet" id="resourcesTile"><span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m24 5 18 9-18 9-18-9zM6 23l18 9 18-9M6 32l18 9 18-9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg></span><strong>Resources</strong><small>PYQs, syllabi &amp;<br>reference material</small><span class="tile-arrow">→</span></button>
+      <button class="feature-tile tile-amber" id="toolsTile"><span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="15" width="38" height="27" rx="4" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M17 15V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v6M5 25h38M20 24v5h8v-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg></span><strong>Tools</strong><small>Useful academic<br>tools &amp; utilities</small><span class="tile-arrow">→</span></button>
+      <button class="feature-tile tile-cream" id="savedTile"><span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 6h28v36L24 31 10 42z" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linejoin="round"/></svg></span><strong>Saved</strong><small>Your bookmarks<br>and quick access</small><span class="tile-arrow">→</span></button>
     </div>
   </div>
   <div class="quick-access">
     <div class="quick-heading"><span></span><h2>Quick Access</h2></div>
-    <button class="quick-pill quick-active" id="notesQuick"><span>▤</span> Notes</button>
-    <button class="quick-pill" id="pyqQuick"><span>▧</span> PYQs</button>
-    <button class="quick-pill" id="syllabusQuick"><span>▦</span> Syllabus</button>
-    <button class="quick-pill" id="bookmarksQuick"><span>♧</span> Bookmarks</button>
+    <button class="quick-pill quick-active" id="notesQuick"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 12h8M8 15h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span> Notes</button>
+    <button class="quick-pill" id="pyqQuick"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM15 3v5h4M9 12h7M9 16h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span> PYQs</button>
+    <button class="quick-pill" id="syllabusQuick"><span aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 3v4M17 3v4M3 10h18M7 14h3M7 17h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span> Syllabus</button>
+    <button class="quick-pill" id="bookmarksQuick"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-7-5-7 5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span> Bookmarks</button>
   </div>
   <div class="library-section">
     <div class="section-head"><div><div class="eyebrow">THE LIBRARY</div><h2>Choose a subject</h2><p>Start broad, then follow your curiosity.</p></div><span class="tag">6 subject areas</span></div>

@@ -259,6 +259,56 @@ body[data-theme="dark"] .study-hero h1,body[data-theme="dark"] .quick-heading h2
 body[data-theme="dark"] .hero-search,body[data-theme="dark"] .quick-pill:not(.quick-active){background:var(--paper);color:var(--ink);border-color:var(--line)}
 body[data-theme="dark"] .tile-cream{color:#30113b}
 
+
+/* Reference polish pass: richer hero ribbons, typography, icon consistency, and depth */
+.home-redesign{position:relative;isolation:isolate}
+.home-redesign:before{content:"";position:absolute;z-index:-1;pointer-events:none;top:-24px;left:50%;right:calc((1240px - 100vw)/-2);height:720px;background:radial-gradient(ellipse at 78% 12%,#ffb77a52 0,transparent 36%),radial-gradient(ellipse at 12% 85%,#f4c7e34a 0,transparent 42%);opacity:.95}
+.study-hero{overflow:visible}
+.study-hero:before{top:-28px;right:-5%;width:58%;height:190px;opacity:.95;filter:blur(1px);border-radius:0;clip-path:polygon(0 0,100% 0,100% 68%,82% 60%,62% 48%,43% 29%,25% 17%,0 18%);background:linear-gradient(155deg,transparent 8%,#5b1a58 9%,#7c2b70 36%,#e65c70 37%,#ff8b16 58%,#ffd28a 73%,transparent 74%)}
+.study-hero:after{content:"";position:absolute;z-index:0;top:-22px;right:-3%;width:52%;height:175px;pointer-events:none;clip-path:polygon(8% 0,100% 0,100% 72%,79% 65%,58% 47%,38% 26%,20% 18%,0 15%);background:linear-gradient(160deg,transparent 9%,#a74b8c 10%,#55205a 44%,#ff9a19 45%,#ffbf65 67%,transparent 68%);opacity:.78}
+.study-hero-copy{max-width:500px}
+.hero-kicker{margin-bottom:28px;color:#5b4658}
+.study-hero h1{font-family:Arial,Helvetica,sans-serif;font-size:clamp(58px,6.7vw,91px);letter-spacing:-5px;line-height:.94;font-weight:850}
+.study-lead{font-family:Arial,Helvetica,sans-serif;font-size:19px;color:#81717e}
+.feature-tile{backdrop-filter:blur(8px);box-shadow:0 22px 40px #42123b32,0 3px 8px #42123b12}
+.feature-tile:after{content:"";position:absolute;inset:auto -25% -30% -10%;height:43%;border-radius:50%;background:linear-gradient(100deg,#ffffff00,#ffffff21,#ffb06c25);filter:blur(7px);pointer-events:none}
+.tile-plum{background:linear-gradient(155deg,#511450 0%,#2c0b39 72%,#7e315f 100%)}
+.tile-violet{background:linear-gradient(155deg,#8a3d83 0%,#4b174f 72%,#b84d7b 100%)}
+.tile-amber{background:linear-gradient(155deg,#ffad26 0%,#ff8500 62%,#d94237 100%)}
+.tile-cream{background:linear-gradient(150deg,#fffefa 0%,#fff7ed 65%,#ffe7db 100%)}
+.tile-icon{font-family:Arial,Helvetica,sans-serif;text-shadow:0 2px 7px #240d303f}
+.quick-pill{box-shadow:0 10px 24px #4a194014,0 2px 5px #4a19400a}
+.quick-pill.quick-active{box-shadow:0 12px 25px #35113d3b,0 3px 7px #35113d18}
+.hero-search{box-shadow:0 12px 30px #4c1b451a,0 2px 7px #4c1b4509}
+.subject-card,.category-card,.article-card{box-shadow:0 7px 20px #4b254009}
+.subject-card:hover,.category-card:hover,.article-card:hover{box-shadow:0 15px 28px #4b254018}
+@media(max-width:1000px){
+ .study-hero{gap:30px}
+ .study-hero:before{width:80%;right:-3%;height:145px}
+ .study-hero:after{width:75%;right:-2%;height:135px}
+}
+@media(max-width:700px){
+ .home-redesign:before{top:0;height:680px;left:0;right:-14px;background:radial-gradient(ellipse at 82% 10%,#ffb77a55 0,transparent 38%),radial-gradient(ellipse at 8% 88%,#f4c7e34d 0,transparent 44%)}
+ .study-hero{padding-top:36px;gap:27px}
+ .study-hero:before{top:-8px;right:-14px;width:84%;height:112px;opacity:.82}
+ .study-hero:after{top:-5px;right:-12px;width:80%;height:100px;opacity:.72}
+ .study-hero h1{font-size:clamp(49px,12.5vw,68px);letter-spacing:-3.5px;line-height:.96}
+ .study-lead{font-size:16px;line-height:1.6;max-width:350px}
+ .hero-kicker{position:relative;z-index:2;margin-bottom:20px}
+ .study-feature-cards{gap:12px}
+ .feature-tile{min-height:202px;padding:19px 16px;border-radius:23px;box-shadow:0 16px 28px #42123b27}
+ .tile-icon{font-size:34px;margin-bottom:20px}
+ .feature-tile strong{font-size:18px}
+ .feature-tile small{font-size:12px;line-height:1.5}
+ .quick-access{gap:12px}
+}
+@media(max-width:420px){
+ .feature-tile{min-height:188px;padding:16px 13px}
+ .tile-icon{font-size:31px;margin-bottom:17px}
+ .feature-tile strong{font-size:17px}
+ .quick-pill{height:50px}
+}
+
 </style></head>
 <body>
 <header class="topbar"><div class="shell topinner">
